@@ -1,0 +1,170 @@
+Lilo Scheduler – Project Prompt (Copy–Paste Ready)
+
+Title: Lilo Scheduler – AI-Powered Personal Time & Habit Manager
+
+Idea in one line:
+Build a modern web app where users log in, manage their daily/weekly/yearly schedules, set smart alarms, and chat with an AI assistant called Lilo that helps them plan and organize everything automatically.
+
+Core Flow:
+
+Authentication First:
+
+Landing → Login / Sign Up / Register page.
+
+Only registered users can access the main dashboard.
+
+Top-Right User Profile:
+
+After login, show the user’s email / avatar icon on the top-right.
+
+Clicking the email/icon opens a profile panel with:
+
+Email ID
+
+(Hashed) password change option
+
+Basic personal info (name, college, time zone, etc.)
+
+Right-Side Hamburger Menu (☰) – Schedules:
+
+A 3-line menu icon on the right opens a side drawer with:
+
+Daily schedule
+
+Weekly schedule
+
+Monthly schedule
+
+Yearly / long-term schedule
+
+Each schedule is stored in the database per user (so it remembers across logins).
+
+Each entry should save:
+
+Title of task
+
+Date & time
+
+Repeat pattern (one-time / daily / weekly / monthly / yearly)
+
+Optional notes
+
+Smart Calendar + Reminder System:
+
+Calendar view with:
+
+Year view (for long goals)
+
+Month view
+
+Week view
+
+Day view
+
+For each entry, the system:
+
+Stores it in the database
+
+Triggers reminders (like alarm/notification) at the scheduled time
+
+Support custom alarms (sound + notification text).
+
+To-Do List + Habit Tracking (Dashboard Center):
+
+On the main dashboard, show:
+
+Today’s To-Do list (tasks with checkboxes and times)
+
+Upcoming tasks for the current week
+
+User can:
+
+Add tasks with time and date
+
+Mark as done
+
+Auto-create repeated tasks (e.g., “Wake up at 6:00 AM every day in April”)
+
+Example:
+
+User sets: “Wake up at 6:00 AM, every day in April”
+
+System automatically creates 30/31 tasks + reminders for that month.
+
+Lilo – AI Chatbot at Bottom Right:
+
+Floating AI chat bubble in the bottom-right corner.
+
+Name: Lilo.
+
+Wake word: when user types “Lilo, …” or clicks Lilo, the assistant “wakes up”.
+
+Lilo should:
+
+Answer general questions (study, productivity, etc.)
+
+Help the user create schedules from natural language:
+
+“Lilo, schedule DBMS revision every Sunday at 8 PM this month”
+
+“Lilo, remind me about project review on 15th March at 3 PM”
+
+Suggest to-do lists based on queries like:
+
+“I want to prepare for my exams in 10 days, create a plan.”
+
+Read/write from the user’s stored schedules (so it can say:
+“You have Math revision at 6 PM and Project work at 8 PM today.”)
+
+Visual Design & UX:
+
+Theme: Modern, vibrant, minimal, professional.
+
+Use:
+
+Gradient backgrounds (blues, purples, teals)
+
+Smooth animations (on page load, menu open, button hover)
+
+Clean typography (clear headings + soft body text)
+
+The first impression should feel:
+
+Premium, startup-grade, eye-catching
+
+Not like a basic college project UI.
+
+Data Structures & CRUD (for academic requirement):
+
+Internally use data structures to manage tasks and schedules:
+
+Queue / Priority Queue – to manage upcoming reminders by time.
+
+Linked List or Array of Objects – for daily/weekly to-do items.
+
+CRUD operations on tasks:
+
+Create – Add schedule / task
+
+Read – View today / week / month
+
+Update – Edit timings, repeat pattern, notes
+
+Delete – Remove tasks / reminders
+
+You can highlight in documentation that:
+
+“Lilo Scheduler uses queues/priority queues for managing upcoming alarms and schedules, fulfilling data structures (DS) project requirements.”
+
+Tech Stack (flexible, but suggested):
+
+Frontend: HTML, CSS, JavaScript (with modern UI framework or Tailwind if wanted)
+
+Backend: Node.js/Express or Firebase Functions
+
+Database: Firebase / Firestore / MongoDB (per-user schedules & tasks)
+
+AI: Google Gemini / any LLM API wrapped behind a backend endpoint
+
+Goal:
+Build a fully working “Lilo Scheduler” prototype where students can log in, manage their time, and rely on an AI assistant to auto-plan, remind, and organize tasks in a visually attractive, professional interface that also demonstrates proper use of data structures and CRUD operations.

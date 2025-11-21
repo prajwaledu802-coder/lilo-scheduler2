@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LILO SCHEDULER COLORS */
+:root {
+  --lilo-blue: #0B6EFD;
+  --mint: #00C2A8;
+  --amber: #FF8B3D;
+  --bg-panel: #F5F7FA;
+  --text-primary: #111827;
+  --text-muted: #6B7280;
+  --radius-2xl: 16px;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 6px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.2s ease;
+
+  /* HSL format for Tailwind */
+  --lilo-blue-hsl: 216 98% 52%;
+  --mint-hsl: 165 100% 50%;
+  --amber-hsl: 18 100% 62%;
+  --bg-panel-hsl: 218 14% 98%;
+  --text-primary-hsl: 217 33% 17%;
+  --text-muted-hsl: 215 14% 34%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+  --background: 0deg 21.48% 26.47%;
+  --foreground: 240deg 18.34% 66.86%;
+  --border: 240 5.9% 90%;
+  --card: 0 0% 98%;
+  --card-foreground: 240 10% 3.9%;
+  --card-border: 240 5.9% 96%;
+  --sidebar: 240 4.8% 95.9%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-border: 240 5.9% 93%;
+  --sidebar-primary: 216 98% 52%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 92%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-ring: 216 98% 52%;
+  --popover: 0 0% 96%;
+  --popover-foreground: 240 10% 3.9%;
+  --popover-border: 240 5.9% 94%;
+  --primary: 216 98% 52%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 91%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 0deg 0% 0%;
+  --muted-foreground: 240deg 17.74% 75.69%;
+  --accent: 165 100% 50%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 240 5.9% 80%;
+  --ring: 216 98% 52%;
+  --chart-1: 216 98% 52%;
+  --chart-2: 165 100% 50%;
+  --chart-3: 18 100% 62%;
+  --chart-4: 43 96% 56%;
+  --chart-5: 27 87% 67%;
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: .5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00), 0px 1px 2px -1px hsl(240 5.9% 10% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00), 0px 1px 2px -1px hsl(240 5.9% 10% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00), 0px 2px 4px -1px hsl(240 5.9% 10% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00), 0px 4px 6px -1px hsl(240 5.9% 10% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00), 0px 8px 10px -1px hsl(240 5.9% 10% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(240 5.9% 10% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --card: 240 10% 5%;
+  --card-foreground: 0 0% 98%;
+  --card-border: 240 3.7% 7%;
+  --sidebar: 240 5.9% 7%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 9%;
+  --sidebar-primary: 216 98% 52%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 3.7% 10%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-ring: 216 98% 52%;
+  --popover: 240 10% 8%;
+  --popover-foreground: 0 0% 98%;
+  --popover-border: 240 3.7% 10%;
+  --primary: 216 98% 52%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 12%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 11%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 165 100% 50%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 240 3.7% 25%;
+  --ring: 216 98% 52%;
+  --chart-1: 216 98% 52%;
+  --chart-2: 165 100% 50%;
+  --chart-3: 18 100% 62%;
+  --chart-4: 43 96% 56%;
+  --chart-5: 27 87% 67%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .app-container {
+    @apply flex min-h-screen;
+  }
+
+  .sidebar {
+    @apply w-[260px] bg-white shadow-sm p-6 flex flex-col transition-all z-50;
+  }
+
+  .logo {
+    @apply flex items-center mb-8 px-3 gap-3;
+  }
+
+  .logo-icon {
+    @apply w-9 h-9 rounded-3xl flex items-center justify-center text-white font-bold text-lg;
+    background: linear-gradient(135deg, var(--lilo-blue) 0%, var(--mint) 50%, var(--amber) 100%);
+  }
+
+  .logo-text {
+    @apply font-bold text-xl;
+    background: linear-gradient(135deg, var(--lilo-blue) 0%, var(--mint) 50%, var(--amber) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-item {
+    @apply flex items-center px-3 py-3 rounded-2xl mb-2 cursor-pointer transition-all text-sm font-medium;
+    color: var(--text-muted);
+  }
+
+  .nav-item:hover {
+    @apply bg-[var(--bg-panel)];
+    color: var(--text-primary);
+  }
+
+  .nav-item.active {
+    @apply text-white;
+    background-color: var(--lilo-blue);
+  }
+
+  .nav-item i {
+    @apply mr-3 w-5 text-center;
+  }
+
+  .main-content {
+    @apply flex-1 p-6 overflow-y-auto;
+  }
+
+  .header {
+    @apply flex justify-between items-center mb-8;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold;
+    color: var(--text-primary);
+  }
+
+  .user-menu {
+    @apply flex items-center gap-4;
+  }
+
+  .quick-add-btn {
+    @apply px-4 py-2 rounded-2xl font-medium text-white flex items-center gap-2 transition-all hover:shadow-md hover:-translate-y-0.5;
+    background-color: var(--lilo-blue);
+  }
+
+  .quick-add-btn:hover {
+    background-color: #0a63e4;
+  }
+
+  .user-avatar {
+    @apply w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold cursor-pointer;
+    background: linear-gradient(135deg, var(--lilo-blue) 0%, var(--mint) 100%);
+  }
+
+  .dashboard-grid {
+    @apply grid gap-6 grid-cols-1 lg:grid-cols-2;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl p-6 shadow-sm transition-all hover:shadow-md hover:-translate-y-1;
+  }
+
+  .card-header {
+    @apply flex justify-between items-center mb-5;
+  }
+
+  .card-title {
+    @apply font-semibold text-lg;
+    color: var(--text-primary);
+  }
+
+  .card-action {
+    @apply cursor-pointer font-medium text-sm;
+    color: var(--lilo-blue);
+  }
+
+  .task-item {
+    @apply flex items-center py-3 border-b border-gray-100 last:border-b-0;
+  }
+
+  .task-checkbox {
+    @apply mr-3 w-5 h-5 rounded border-2 border-gray-300 cursor-pointer flex items-center justify-center transition-all;
+  }
+
+  .task-checkbox.checked {
+    @apply text-white;
+    background-color: var(--mint);
+    border-color: var(--mint);
+  }
+
+  .task-content {
+    @apply flex-1;
+  }
+
+  .task-title {
+    @apply font-medium text-sm;
+    color: var(--text-primary);
+  }
+
+  .task-time {
+    @apply text-xs mt-1;
+    color: var(--text-muted);
+  }
+
+  .calendar {
+    @apply grid grid-cols-7 gap-2;
+  }
+
+  .calendar-header {
+    @apply grid grid-cols-7 text-center font-semibold mb-3 text-sm;
+    color: var(--text-muted);
+  }
+
+  .calendar-day {
+    @apply text-center py-3 rounded-2xl cursor-pointer transition-all text-sm;
+  }
+
+  .calendar-day:hover {
+    @apply bg-[var(--bg-panel)];
+  }
+
+  .calendar-day.active {
+    @apply text-white;
+    background-color: var(--lilo-blue);
+  }
+
+  .stats-grid {
+    @apply grid grid-cols-3 gap-4;
+  }
+
+  .stat-card {
+    @apply text-center p-4 rounded-2xl;
+    background-color: var(--bg-panel);
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold mb-2;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    @apply text-xs;
+    color: var(--text-muted);
+  }
+
+  .lilo-assistant {
+    @apply fixed bottom-6 right-6 w-15 h-15 rounded-full flex items-center justify-center text-white cursor-pointer shadow-md z-50 transition-transform hover:scale-105;
+    background: linear-gradient(135deg, var(--lilo-blue) 0%, var(--mint) 100%);
+  }
+
+  .lilo-assistant i {
+    @apply text-2xl;
+  }
+
+  .lilo-chat-window {
+    @apply fixed bottom-[90px] right-6 w-[360px] h-[480px] bg-white rounded-3xl shadow-md flex flex-col z-50 overflow-hidden transition-all;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .lilo-chat-window.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .chat-header {
+    @apply px-4 py-4 text-white flex items-center gap-3 font-medium text-sm;
+    background: linear-gradient(135deg, var(--lilo-blue) 0%, var(--mint) 100%);
+  }
+
+  .chat-messages {
+    @apply flex-1 px-4 py-4 overflow-y-auto space-y-4;
+  }
+
+  .message {
+    @apply flex mb-4;
+  }
+
+  .message.user {
+    @apply flex-row-reverse;
+  }
+
+  .message-bubble {
+    @apply max-w-80% px-4 py-3 rounded-2xl text-sm;
+  }
+
+  .message.lilo .message-bubble {
+    @apply rounded-tl-none;
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
+  }
+
+  .message.user .message-bubble {
+    @apply text-white rounded-tr-none;
+    background-color: var(--lilo-blue);
+  }
+
+  .chat-input {
+    @apply px-4 py-4 border-t border-gray-100 flex gap-2;
+  }
+
+  .chat-input input {
+    @apply flex-1 px-4 py-2 border border-gray-200 rounded-2xl outline-none transition-all text-sm;
+  }
+
+  .chat-input input:focus {
+    border-color: var(--lilo-blue);
+  }
+
+  .chat-input button {
+    @apply w-11 h-11 flex items-center justify-center rounded-2xl text-white cursor-pointer transition-all;
+    background-color: var(--lilo-blue);
+  }
+
+  .chat-input button:hover {
+    background-color: #0a63e4;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    @apply w-full flex-row p-4 overflow-x-auto;
+  }
+
+  .logo {
+    @apply mb-0 mr-4;
+  }
+
+  .nav-items {
+    @apply flex flex-row gap-2;
+  }
+
+  .nav-item {
+    @apply mb-0 whitespace-nowrap;
+  }
+
+  .dashboard-grid {
+    @apply grid-cols-1;
+  }
+
+  .lilo-chat-window {
+    @apply w-[300px] right-3;
+  }
+}
